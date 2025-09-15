@@ -1,0 +1,122 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #2e003e, #0f0f1e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffd369;
+  text-shadow: 0 0 8px #ff7b54, 0 0 15px #fcb69f;
+}
+
+/* Input */
+.input-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 55%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff6f61, #ff9a76);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 105, 97, 0.7);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff9a76, #ff6f61);
+  box-shadow: 0 0 15px rgba(255, 105, 97, 1);
+}
+
+/* Magical Book */
+.book {
+  position: relative;
+  width: 280px;   /* 📖 Smaller Book */
+  height: 350px;
+  perspective: 2000px;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4),
+              0 0 40px rgba(255, 140, 0, 0.3),
+              0 0 60px rgba(255, 69, 0, 0.2);
+  background: #1c1c2e;
+  overflow: hidden;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: #fefae0;
+  border-radius: 12px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  text-align: left;
+  font-size: 0.95rem;
+  transform-origin: left center;
+  transform: rotateY(180deg);
+  transition: transform 0.8s ease-in-out, box-shadow 0.5s;
+  backface-visibility: hidden;
+  overflow-y: auto;
+  font-family: 'Playfair Display', serif;
+}
+
+.page.active {
+  transform: rotateY(0deg);
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
+}
+
+.page h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #6a040f;
+}
+
+.ai-suggestion {
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #3d405b;
+  border-top: 1px dashed #aaa;
+  padding-top: 5px;
+}
+
+/* Controls */
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
